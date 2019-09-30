@@ -1,0 +1,81 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Remove Duplicates from Sorted List",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ParthikB/Practice-questions/blob/master/Remove%20Duplicates%20from%20Sorted%20List.ipynb%20%23solved\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nPKwqQstxIHj",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "\"\"\"\n",
+        "Given a sorted linked list, delete all duplicates such that each element appear only once.\n",
+        "\n",
+        "Example 1:\n",
+        "\n",
+        "Input: 1->1->2\n",
+        "Output: 1->2\n",
+        "\n",
+        "Input: 1->1->2->2\n",
+        "\n",
+        "\"\"\""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bY7SgJRryWjx",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# Definition for singly-linked list.\n",
+        "class ListNode:\n",
+        "    def __init__(self, x):\n",
+        "        self.val = x\n",
+        "        self.next = None\n",
+        "\n",
+        "class Solution:\n",
+        "    def deleteDuplicates(self, head: ListNode) -> ListNode:\n",
+        "      \n",
+        "      cur = head\n",
+        "      \n",
+        "      while cur.next:\n",
+        "        next_ = cur.next\n",
+        "        if cur.val == next_.val:\n",
+        "          cur.next = next_.next if next_.next != None else None\n",
+        "        else:\n",
+        "          cur = cur.next\n",
+        "          \n",
+        "      return head"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
